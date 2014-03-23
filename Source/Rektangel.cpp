@@ -2,12 +2,7 @@
 #include "Figur.h";
 #include "Rektangel.h"
 
-Rektangel::Rektangel(Canvas & cv, int ulx,int uly, int width,int height, Colorf cf)
-{
-
-}
-
-void Rektangel::update()
+Rektangel::Rektangel(Canvas & cv, int width, int height, Pointf cp, Colorf cf)
 {
 
 }
@@ -16,15 +11,13 @@ void Rektangel::draw(Font & font)
 {
 
 }
-void Rektangel::setul(int x, int y)
+
+void Rektangel::copy()
 {
 
 }
 
-void Rektangel::setlr(int x, int y)
+void Rektangel::hit()
 {
 
 }
-
-Pointf Rektangel::getul(){return Pointf();}
-Pointf Rektangel::getlr(){return Pointf();}

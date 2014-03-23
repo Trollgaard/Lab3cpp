@@ -2,12 +2,7 @@
 #include "Figur.h";
 #include "Punkt.h"
 
-Punkt::Punkt(Canvas & cv, int ulx,int uly, int width,int height, Colorf cf)
-{
-
-}
-
-void Punkt::update()
+Punkt::Punkt(Canvas & cv, int width, int height, Pointf cp, Colorf cf)
 {
 
 }
@@ -16,15 +11,13 @@ void Punkt::draw(Font & font)
 {
 
 }
-void Punkt::setul(int x, int y)
+
+void Punkt::copy()
 {
 
 }
 
-void Punkt::setlr(int x, int y)
+void Punkt::hit()
 {
 
 }
-
-Pointf Punkt::getul(){return Pointf();}
-Pointf Punkt::getlr(){return Pointf();}

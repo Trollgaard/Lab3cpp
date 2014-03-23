@@ -1,11 +1,9 @@
-class Kvadrat
+class Kvadrat: public Rektangel
 {public:
-	Kvadrat(Canvas & cv, int ulx,int uly, int width,int height, Colorf cf);
-	void update();
+	Kvadrat(Canvas & cv, int width, int height, Pointf cp, Colorf cf);
 	void draw(Font & font);
-	void setul(int x, int y);
-	void setlr(int x, int y);
-	Pointf getul();
-	Pointf getlr();
+	void copy();
+	void hit();
+
 private:;
 };

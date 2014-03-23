@@ -3,21 +3,22 @@
 #include "Figur.h"
 
 
-Cirkel::Cirkel  (Canvas & cv, int cx,int cy, int rad, Colorf cf)
+Cirkel::Cirkel(Canvas & cv, int width, int height, Pointf cp, Colorf cf)
 {
 
 }
 
-void Cirkel::update()
-{
-
-}
 void Cirkel::draw(Font & font)
 {
-	
+
 }
 
-void Cirkel::set(int x, int y, int width, int height)
+void Cirkel::copy()
 {
-	
+
+}
+
+void Cirkel::hit()
+{
+
 }

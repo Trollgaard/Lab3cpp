@@ -1,13 +1,8 @@
 #include "displayprogram.h"
-#include "Figur.h";
+#include "Rektangel.h"
 #include "Kvadrat.h"
 
-Kvadrat::Kvadrat(Canvas & cv, int ulx,int uly, int width,int height, Colorf cf)
-{
-
-}
-
-void Kvadrat::update()
+Kvadrat::Kvadrat(Canvas & cv, int width, int height, Pointf cp, Colorf cf)
 {
 
 }
@@ -16,15 +11,13 @@ void Kvadrat::draw(Font & font)
 {
 
 }
-void Kvadrat::setul(int x, int y)
+
+void Kvadrat::copy()
 {
 
 }
 
-void Kvadrat::setlr(int x, int y)
+void Kvadrat::hit()
 {
 
 }
-
-Pointf Kvadrat::getul(){return Pointf();}
-Pointf Kvadrat::getlr(){return Pointf();}
