@@ -1,6 +1,9 @@
+#include "displayprogram.h"
 #include "Cirkel.h"
+#include "Figur.h"
 
-Cirkel::Cirkel(Canvas & cv, int width, int height, int cpx, int cpy, Colorf cf):Figur(cv, width, height, cpx, cpy, cf)
+
+Cirkel::Cirkel(Canvas & cv, int width, int height, Pointf cp, Colorf cf)
 {
 
 }
