@@ -7,6 +7,10 @@ Figur::Figur(Canvas & cv, int width, int height, int cpx, int cpy, Colorf cf): _
 	_width = width;
 	_height = height;
 	_cf = cf;
+	_ulp.x = (cpx - (width/2));
+	_ulp.y = (cpy - (height/2));
+	_lrp.x = (cpx + (width/2));
+	_lrp.y = (cpy + (height/2));
 }
 
 void Figur::draw()
@@ -14,12 +18,12 @@ void Figur::draw()
 	
 }
 
-void Figur::copy()
+Figur * Figur::copy(int mx, int my)
 {
-
+	return this;
 }
 
-void Figur::hit()
+bool Figur::hit(int mx, int my)
 {
-
+	return false;
 }

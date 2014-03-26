@@ -6,11 +6,13 @@
 class Linje : public Figur
 {public:
 	Linje(Canvas & cv, int width, int height, int cpx, int cpy, Colorf cf);
-	void draw(Font & font);
-	void copy();
-	void hit();
+	void draw();
+	Linje * copy(int mx, int my);
+	bool hit(int mx, int my);
 
-private:;
+private:
+	Pointf _start, _end;
+	int _k;
 };
 
 #endif

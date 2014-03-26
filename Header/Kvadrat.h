@@ -6,11 +6,12 @@
 class Kvadrat : public Rektangel
 {public:
 	Kvadrat(Canvas & cv, int width, int height, int cpx, int cpy, Colorf cf);
-	void draw(Font & font);
-	void copy();
-	void hit();
+	void draw();
+	Kvadrat * copy(int mx, int my);
+	bool hit(int mx, int my);
 
-private:;
+private:
+	int _side;
 };
 
 #endif

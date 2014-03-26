@@ -2,20 +2,23 @@
 
 Kvadrat::Kvadrat(Canvas & cv, int width, int height, int cpx, int cpy, Colorf cf):Rektangel(cv, width, height, cpx, cpy, cf)
 {
-
+	if ((width) < (height))
+		_side = width;
+	else
+		_side = height;
 }
 
-void Kvadrat::draw(Font & font)
+void Kvadrat::draw()
 {
-
+	_cv->fill_rect(Rectf(_ulp.x, _ulp.y, Sizef(_side, _side)), _cf);
 }
 
-void Kvadrat::copy()
+Kvadrat * Kvadrat::copy(int mx, int my)
 {
-
+	return this;
 }
 
-void Kvadrat::hit()
+bool Kvadrat::hit(int mx, int my)
 {
-
+	return false;
 }

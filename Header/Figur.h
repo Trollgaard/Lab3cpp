@@ -6,15 +6,16 @@
 class Figur
 {public:
 	Figur(Canvas & cv, int width, int height, int cpx, int cpy, Colorf cf);
-	~Figur();
+	//~Figur();
 	virtual void draw();
-	virtual void copy();
-	virtual void hit();
+	virtual Figur * copy(int mx, int my);
+	virtual bool hit(int mx, int my);
 
 protected:
 	int _height, _width;
+	bool _mHit;
 	Colorf _cf;
-	Pointf _cp;
+	Pointf _cp, _ulp, _lrp;
 	Canvas * _cv;
 };
 

@@ -5,17 +5,17 @@ Punkt::Punkt(Canvas & cv, int width, int height, int cpx, int cpy, Colorf cf):Fi
 
 }
 
-void Punkt::draw(Font & font)
+void Punkt::draw()
 {
-
+	_cv->draw_point(_cp, _cf);
 }
 
-void Punkt::copy()
+Punkt * Punkt::copy(int mx, int my)
 {
-
+	return this;
 }
 
-void Punkt::hit()
+bool Punkt::hit(int mx, int my)
 {
-
+	return false;
 }

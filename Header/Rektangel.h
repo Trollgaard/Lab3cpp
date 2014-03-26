@@ -7,11 +7,10 @@ class Rektangel : public Figur
 {public:
 	Rektangel(Canvas & cv, int width, int height, int cpx, int cpy, Colorf cf);
 	void draw();
-	void copy();
-	void hit();
+	Rektangel * copy(int mx, int my);
+	bool hit(int mx, int my);
 
-private:
-	Pointf ulP;
+private:;
 };
 
 #endif

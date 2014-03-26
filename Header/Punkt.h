@@ -6,9 +6,9 @@
 class Punkt : public Figur
 {public:
 	Punkt(Canvas & cv, int width, int height, int cpx, int cpy, Colorf cf);
-	void draw(Font & font);
-	void copy();
-	void hit();
+	void draw();
+	Punkt * copy(int mx, int my);
+	bool hit(int mx, int my);
 
 private:;
 };
