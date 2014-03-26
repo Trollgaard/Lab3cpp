@@ -1,8 +1,6 @@
-#include "displayprogram.h"
-#include "Figur.h";
 #include "Linje.h"
 
-Linje::Linje(Canvas & cv, int width, int height, Pointf cp, Colorf cf)
+Linje::Linje(Canvas & cv, int width, int height, int cpx, int cpy, Colorf cf):Figur(cv, width, height, cpx, cpy, cf)
 {
 
 }

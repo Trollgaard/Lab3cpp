@@ -1,8 +1,6 @@
-#include "displayprogram.h"
-#include "Rektangel.h"
 #include "Kvadrat.h"
 
-Kvadrat::Kvadrat(Canvas & cv, int width, int height, Pointf cp, Colorf cf)
+Kvadrat::Kvadrat(Canvas & cv, int width, int height, int cpx, int cpy, Colorf cf):Rektangel(cv, width, height, cpx, cpy, cf)
 {
 
 }
