@@ -8,8 +8,8 @@
 #include <vector>
 void DisplayProgram::mymain(DisplayWindow window, Canvas cv,InputDevice keyboard, InputDevice mouse,Font font)
 {
-	bool mHit = false, mCopy = false;
-	int fHit = 0;
+	bool mHit = false, mCopy = false, mfHit;
+	int fHit = NULL;
 	vector<Figur*> myVec;
 	myVec.push_back(new Cirkel(cv, 25, 25, 100, 30, Colorf::blueviolet));
 	myVec.push_back(new Rektangel(cv, 55, 30, 200, 30, Colorf::darkorchid));
@@ -19,24 +19,25 @@ void DisplayProgram::mymain(DisplayWindow window, Canvas cv,InputDevice keyboard
 
 	while (looping(keyboard,window,cv))
 	{
-		if(!mouse.get_keycode(mouse_left) && mHit)
+		if(!mouse.get_keycode(mouse_left) )
 		{
-		   if (!mCopy)
-			   mCopy = true;
-		   else
-			   mCopy = false;
+			mCopy = true;
+			if (fHit == NULL)
+				mHit = true;
 		}
 		
 
 		if(mouse.get_keycode(mouse_left))
 		{
-			if (!mHit)
+			if (mHit)
 			{
 				for (int i = 0; i < myVec.size(); i++)
 				{
-					mHit = myVec[i]->hit(mouse.get_x(),mouse.get_y());
-					if (mHit)
+					mfHit = myVec[i]->hit(mouse.get_x(),mouse.get_y());
+					if (mfHit)
 					{
+						mHit = false;
+						mCopy = false;
 						fHit = i;
 						break;
 					}
@@ -47,6 +48,7 @@ void DisplayProgram::mymain(DisplayWindow window, Canvas cv,InputDevice keyboard
 				myVec.push_back(myVec[fHit]->copy(mouse.get_x(),mouse.get_y()));
 				mHit = false;
 				mCopy = false;
+				fHit = NULL;
 			}
 		}
 		for (int i = 0; i < myVec.size(); i++)
