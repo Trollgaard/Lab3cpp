@@ -12,7 +12,7 @@ class Linje : public Figur
 
 private:
 	Pointf _start, _end;
-	int _k;
+	double _k;
 };
 
 #endif

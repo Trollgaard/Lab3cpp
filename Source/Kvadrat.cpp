@@ -15,10 +15,19 @@ void Kvadrat::draw()
 
 Kvadrat * Kvadrat::copy(int mx, int my)
 {
-	return this;
+	Kvadrat * copySquare = new Kvadrat(*this);
+	copySquare->_cp = Pointf(mx, my);
+	copySquare->_ulp = Pointf((copySquare->_cp.x - (copySquare->_side/2)), (copySquare->_cp.y - (copySquare->_side/2)));
+	copySquare->_lrp = Pointf((copySquare->_cp.x + (copySquare->_side/2)), (copySquare->_cp.y + (copySquare->_side/2)));
+	return copySquare;
 }
 
 bool Kvadrat::hit(int mx, int my)
 {
-	return false;
+	_mHit = false;
+	if ((mx > _ulp.x && my > _ulp.y) && (mx < _lrp.x && my < _lrp.y))
+		_mHit = true;
+	else
+		_mHit = false;
+	return _mHit;
 }

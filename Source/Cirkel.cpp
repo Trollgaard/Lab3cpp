@@ -15,10 +15,19 @@ void Cirkel::draw()
 
 Cirkel * Cirkel::copy(int mx, int my)
 {
-	return this;
+	Cirkel * copyCircle = new Cirkel(*this);
+	copyCircle->_cp = Pointf(mx, my);
+	return copyCircle;
 }
 
 bool Cirkel::hit(int mx, int my)
 {
-	return false;
+	float xHit = powf((float)mx - _cp.x, 2);
+	float yHit = powf((float)my - _cp.y,2);
+	int radS = pow(_rad,2);
+	if ((powf((float)mx - _cp.x, 2) + powf((float)my - _cp.y,2)) <= pow(_rad,2))
+		_mHit = true;
+	else
+		_mHit = false;
+	return _mHit;
 }

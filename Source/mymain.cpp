@@ -8,8 +8,8 @@
 #include <vector>
 void DisplayProgram::mymain(DisplayWindow window, Canvas cv,InputDevice keyboard, InputDevice mouse,Font font)
 {
-	bool mHit = false, mCopy = false, mfHit;
-	int fHit = NULL;
+	bool mHit = false, mCopy = false, mfHit = false;
+	int fHit;
 	vector<Figur*> myVec;
 	myVec.push_back(new Cirkel(cv, 25, 25, 100, 30, Colorf::blueviolet));
 	myVec.push_back(new Rektangel(cv, 55, 30, 200, 30, Colorf::darkorchid));
@@ -22,7 +22,7 @@ void DisplayProgram::mymain(DisplayWindow window, Canvas cv,InputDevice keyboard
 		if(!mouse.get_keycode(mouse_left) )
 		{
 			mCopy = true;
-			if (fHit == NULL)
+			if (mfHit == false)
 				mHit = true;
 		}
 		
@@ -48,7 +48,7 @@ void DisplayProgram::mymain(DisplayWindow window, Canvas cv,InputDevice keyboard
 				myVec.push_back(myVec[fHit]->copy(mouse.get_x(),mouse.get_y()));
 				mHit = false;
 				mCopy = false;
-				fHit = NULL;
+				mfHit = false;
 			}
 		}
 		for (int i = 0; i < myVec.size(); i++)

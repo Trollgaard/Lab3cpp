@@ -12,10 +12,17 @@ void Punkt::draw()
 
 Punkt * Punkt::copy(int mx, int my)
 {
-	return this;
+	Punkt * copyPoint = new Punkt(*this);
+	copyPoint->_cp = Pointf(mx, my);
+	return copyPoint;
 }
 
 bool Punkt::hit(int mx, int my)
 {
-	return false;
+	_mHit = false;
+	if ((mx >= (_cp.x-2) && my >= (_cp.y-2)) && (mx <= (_cp.x+2) && my <= (_cp.y+2)))
+		_mHit = true;
+	else
+		_mHit = false;
+	return _mHit;
 }
